@@ -1,0 +1,39 @@
+[package]
+name = "kabtangan-core"
+version = "0.1.0"
+edition = "2021"
+description = "Core engine for the Kabtangan Keyboard — Bahasa Sūg / Sulat Sūg transliteration, dictionary, prediction, and spell checking."
+license = "Apache-2.0"
+repository = "https://github.com/kabtangan/kabtangan-core"
+
+[lib]
+name = "kabtangan_core"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+# SQLite storage
+rusqlite = { version = "0.31", features = ["bundled"] }
+
+# Unicode normalization
+unicode-normalization = "0.1"
+unicode-segmentation = "1"
+
+# Serialization — dictionary export/import
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# Error handling
+thiserror = "1"
+
+# Fuzzy matching for predictions
+strsim = "0.11"
+
+[dev-dependencies]
+eframe = "0.35.0"
+tempfile = "3"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true

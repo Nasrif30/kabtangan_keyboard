@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --bg-app: #e2e8f0;
+  --bg-keyboard: rgba(248, 248, 248, 0.85);
+  --bg-key: #ffffff;
+  --bg-key-special: #e2e8f0;
+  --bg-key-active: #cbd5e1;
+  --text-primary: #181818;
+  --text-secondary: #64748b;
+  --color-primary: #0B7A5C;
+  --color-secondary: #3C8D7B;
+  --color-accent: #C9A227;
+  --shadow-key: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-keyboard: 0 10px 40px rgba(0, 0, 0, 0.1);
+  --backdrop-blur: blur(20px);
+}
+
+[data-theme="dark"] {
+  --bg-app: #0f172a;
+  --bg-keyboard: rgba(24, 24, 24, 0.85);
+  --bg-key: #2d3748;
+  --bg-key-special: #1a202c;
+  --bg-key-active: #4a5568;
+  --text-primary: #f8f8f8;
+  --text-secondary: #a0aec0;
+  --shadow-key: 0 1px 1px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0,0,0,0.2);
+  --shadow-keyboard: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="forest"] {
+  --bg-app: #064e3b;
+  --bg-keyboard: rgba(11, 122, 92, 0.85);
+  --bg-key: #0f8a6a;
+  --bg-key-special: #065f49;
+  --bg-key-active: #14a37f;
+  --text-primary: #ffffff;
+  --text-secondary: #a7f3d0;
+  --shadow-key: 0 1px 1px rgba(0, 0, 0, 0.2);
+  --shadow-keyboard: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="traditional"] {
+  --bg-app: linear-gradient(135deg, #6c0a1a 0%, #300000 100%);
+  --bg-keyboard: rgba(30, 5, 5, 0.85);
+  --bg-key: #4a0f18;
+  --bg-key-special: #2a050b;
+  --bg-key-active: #66121e;
+  --text-primary: #f8f8f8;
+  --text-secondary: #C9A227;
+  --color-primary: #C9A227;
+  --color-secondary: #e5be42;
+  --color-accent: #C9A227;
+  --shadow-key: 0 1px 1px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0,0,0,0.2);
+  --shadow-keyboard: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="glass"] {
+  --bg-app: url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2070&auto=format&fit=crop');
+  --bg-keyboard: rgba(255, 255, 255, 0.2);
+  --bg-key: rgba(255, 255, 255, 0.5);
+  --bg-key-special: rgba(255, 255, 255, 0.3);
+  --bg-key-active: rgba(255, 255, 255, 0.7);
+  --text-primary: #181818;
+  --text-secondary: #475569;
+  --shadow-key: 0 1px 1px rgba(0, 0, 0, 0.1);
+  --backdrop-blur: blur(40px);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', 'Noto Sans', sans-serif;
+  background: var(--bg-app);
+  background-size: cover;
+  background-position: center;
+  color: var(--text-primary);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 2rem;
+}
+
+.editor-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.text-editor {
+  width: 100%;
+  max-width: 800px;
+  background: var(--bg-keyboard);
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: var(--shadow-keyboard);
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  color: var(--text-primary);
+  resize: none;
+  transition: all 0.4s ease;
+}
+
+.keyboard-wrapper {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.keyboard-container {
+  width: 100%;
+  max-width: 900px;
+  background: var(--bg-keyboard);
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  border-radius: 1.5rem;
+  padding: 0.75rem;
+  box-shadow: var(--shadow-keyboard);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: all 0.4s ease;
+}
+
+.prediction-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  height: 3rem;
+  align-items: center;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+  margin-bottom: 0.25rem;
+}
+
+.prediction-word {
+  flex: 1;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+  color: var(--text-primary);
+}
+
+.prediction-word:hover {
+  background: rgba(128, 128, 128, 0.1);
+}
+
+.prediction-word.highlight {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.key {
+  position: relative;
+  background: var(--bg-key);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 0.6rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  box-shadow: var(--shadow-key);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.5rem;
+  flex: 1;
+  max-width: 4.5rem;
+  transition: transform 0.12s cubic-bezier(0.2, 0, 0, 1), background 0.12s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.key:active, .key.active {
+  transform: scale(0.96);
+  background: var(--bg-key-active);
+}
+
+.key-special {
+  background: var(--bg-key-special);
+  font-size: 1rem;
+  flex: 1.25;
+  max-width: 6rem;
+}
+
+.key-space {
+  flex: 5;
+  max-width: 400px;
+}
+
+.key-enter {
+  background: var(--color-primary);
+  color: white;
+}
+
+.key-enter:active {
+  background: var(--color-secondary);
+}
+
+.key-popup {
+  position: absolute;
+  top: -4rem;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  opacity: 0;
+  background: var(--bg-key);
+  color: var(--text-primary);
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  pointer-events: none;
+  transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 10;
+}
+
+.key:active .key-popup {
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+}
+
+.controls {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.theme-btn {
+  background: var(--bg-keyboard);
+  backdrop-filter: var(--backdrop-blur);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  box-shadow: var(--shadow-key);
+  transition: all 0.2s;
+}
+
+.theme-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-keyboard);
+}

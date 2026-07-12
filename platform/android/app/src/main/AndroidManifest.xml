@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kabtangan.keyboard">
+
+    <application
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:theme="@style/Theme.Kabtangan"
+        android:allowBackup="false"
+        android:supportsRtl="false">
+
+        <!--
+            The IME service.
+            bindInputMethod permission ensures only the system can bind to it.
+        -->
+        <service
+            android:name=".KabtanganInputMethodService"
+            android:label="@string/ime_name"
+            android:permission="android.permission.BIND_INPUT_METHOD"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.view.im"
+                android:resource="@xml/method" />
+        </service>
+
+        <!-- Settings activity -->
+        <activity
+            android:name=".settings.SettingsActivity"
+            android:label="@string/settings_title"
+            android:exported="true" />
+
+    </application>
+
+</manifest>

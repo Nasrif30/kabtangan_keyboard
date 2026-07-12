@@ -1,0 +1,212 @@
+[
+  {
+    "word": "'",
+    "sulat": null,
+    "meaning": "Glottal stop (hamzah) — the first letter of the Bahasa Sūg alphabet.",
+    "pronunciation": "ʔ",
+    "example": null,
+    "root_word": null,
+    "category": "letter",
+    "frequency": 0
+  },
+  {
+    "word": "aku",
+    "sulat": null,
+    "meaning": "I; me (first person singular pronoun).",
+    "pronunciation": "a.ku",
+    "example": "Aku in tau Tausug.",
+    "root_word": null,
+    "category": "pronoun",
+    "frequency": 9999
+  },
+  {
+    "word": "kamu",
+    "sulat": null,
+    "meaning": "You (second person singular pronoun).",
+    "pronunciation": "ka.mu",
+    "example": "Unu in ngaran mu, kamu?",
+    "root_word": null,
+    "category": "pronoun",
+    "frequency": 9000
+  },
+  {
+    "word": "siya",
+    "sulat": null,
+    "meaning": "He; she; it (third person singular pronoun).",
+    "pronunciation": "si.ya",
+    "example": "Siya in maas ku.",
+    "root_word": null,
+    "category": "pronoun",
+    "frequency": 8500
+  },
+  {
+    "word": "kami",
+    "sulat": null,
+    "meaning": "We; us (exclusive — excludes the listener).",
+    "pronunciation": "ka.mi",
+    "example": "Kami magpuasa bulan Ramadan.",
+    "root_word": null,
+    "category": "pronoun",
+    "frequency": 7000
+  },
+  {
+    "word": "kita",
+    "sulat": null,
+    "meaning": "We; us (inclusive — includes the listener).",
+    "pronunciation": "ki.ta",
+    "example": "Kita magdungguh.",
+    "root_word": null,
+    "category": "pronoun",
+    "frequency": 7000
+  },
+  {
+    "word": "sila",
+    "sulat": null,
+    "meaning": "They; them (third person plural pronoun).",
+    "pronunciation": "si.la",
+    "example": "Sila magtutū.",
+    "root_word": null,
+    "category": "pronoun",
+    "frequency": 6000
+  },
+  {
+    "word": "ngaran",
+    "sulat": null,
+    "meaning": "Name.",
+    "pronunciation": "nga.ran",
+    "example": "Unu in ngaran mu?",
+    "root_word": null,
+    "category": "noun",
+    "frequency": 5000
+  },
+  {
+    "word": "bayan",
+    "sulat": null,
+    "meaning": "Country; homeland; community.",
+    "pronunciation": "ba.yan",
+    "example": "In bayan sin Tausug mabuhay.",
+    "root_word": null,
+    "category": "noun",
+    "frequency": 4000
+  },
+  {
+    "word": "dagat",
+    "sulat": null,
+    "meaning": "Sea; ocean.",
+    "pronunciation": "da.gat",
+    "example": "Malugay in dagat ha Sūg.",
+    "root_word": null,
+    "category": "noun",
+    "frequency": 3500
+  },
+  {
+    "word": "tau",
+    "sulat": null,
+    "meaning": "Person; human being.",
+    "pronunciation": "ta.u",
+    "example": "Marayaw in tau ha panulay.",
+    "root_word": null,
+    "category": "noun",
+    "frequency": 8000
+  },
+  {
+    "word": "bahasa",
+    "sulat": null,
+    "meaning": "Language; tongue.",
+    "pronunciation": "ba.ha.sa",
+    "example": "In Bahasa Sūg dī' matay.",
+    "root_word": null,
+    "category": "noun",
+    "frequency": 7500
+  },
+  {
+    "word": "sūg",
+    "sulat": null,
+    "meaning": "Current; the Sulu Sea; the name of the Tausug homeland.",
+    "pronunciation": "suːg",
+    "example": "Ha Sūg kami nanganak.",
+    "root_word": null,
+    "category": "noun",
+    "frequency": 7000
+  },
+  {
+    "word": "tausug",
+    "sulat": null,
+    "meaning": "People of the current (Sūg); the Tausug ethnic group.",
+    "pronunciation": "tau.sug",
+    "example": "Aku Tausug.",
+    "root_word": "tau + sūg",
+    "category": "noun",
+    "frequency": 9000
+  },
+  {
+    "word": "marayaw",
+    "sulat": null,
+    "meaning": "Good; fine; beautiful.",
+    "pronunciation": "ma.ra.yaw",
+    "example": "Marayaw na adlaw",
+    "root_word": "rayaw",
+    "category": "adjective",
+    "frequency": 6000
+  },
+  {
+    "word": "dī'",
+    "sulat": null,
+    "meaning": "No; not; negation particle.",
+    "pronunciation": "diːʔ",
+    "example": "Dī' aku mauli.",
+    "root_word": null,
+    "category": "particle",
+    "frequency": 9500
+  },
+  {
+    "word": "in",
+    "sulat": null,
+    "meaning": "The (definite article / topic marker).",
+    "pronunciation": "in",
+    "example": "In tau Tausug.",
+    "root_word": null,
+    "category": "article",
+    "frequency": 9999
+  },
+  {
+    "word": "sin",
+    "sulat": null,
+    "meaning": "Of; belonging to (genitive marker).",
+    "pronunciation": "sin",
+    "example": "In lima sin anak.",
+    "root_word": null,
+    "category": "particle",
+    "frequency": 9000
+  },
+  {
+    "word": "ha",
+    "sulat": null,
+    "meaning": "In; at; on (locative marker).",
+    "pronunciation": "ha",
+    "example": "Ha Jolo kami nagtutū.",
+    "root_word": null,
+    "category": "particle",
+    "frequency": 9000
+  },
+  {
+    "word": "mag",
+    "sulat": null,
+    "meaning": "Verbal focus prefix (actor focus, intentional).",
+    "pronunciation": "mag",
+    "example": "Magbasa kita.",
+    "root_word": null,
+    "category": "affix",
+    "frequency": 8000
+  },
+  {
+    "word": "Jolo",
+    "sulat": null,
+    "meaning": "The capital city of Sulu province.",
+    "pronunciation": "Ho.lo",
+    "example": "Ha Jolo nakatutū in sultan.",
+    "root_word": null,
+    "category": "proper_noun",
+    "frequency": 5000
+  }
+]
