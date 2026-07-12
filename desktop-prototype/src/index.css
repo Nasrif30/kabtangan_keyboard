@@ -67,6 +67,21 @@
   --backdrop-blur: blur(40px);
 }
 
+[data-theme="pink"] {
+  --bg-app: linear-gradient(135deg, #fdf2f8 0%, #fbcfe8 100%);
+  --bg-keyboard: rgba(255, 255, 255, 0.55);
+  --bg-key: rgba(255, 255, 255, 0.85);
+  --bg-key-special: rgba(252, 231, 243, 0.9);
+  --bg-key-active: #f9a8d4;
+  --text-primary: #831843;
+  --text-secondary: #db2777;
+  --color-primary: #ec4899;
+  --color-secondary: #be185d;
+  --color-accent: #db2777;
+  --shadow-key: 0 1px 2px rgba(236, 72, 153, 0.2);
+  --shadow-keyboard: 0 10px 40px rgba(219, 39, 119, 0.15);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -140,6 +155,24 @@ body {
   flex-direction: column;
   gap: 0.5rem;
   transition: all 0.4s ease;
+  position: relative;
+}
+
+.layout-status {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: var(--bg-keyboard);
+  backdrop-filter: var(--backdrop-blur);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  box-shadow: var(--shadow-key);
+  transition: all 0.2s;
+  z-index: 10;
 }
 
 .prediction-bar {
@@ -211,6 +244,12 @@ body {
   font-size: 1rem;
   flex: 1.25;
   max-width: 6rem;
+}
+
+.key-blank {
+  background: transparent !important;
+  box-shadow: none !important;
+  pointer-events: none;
 }
 
 .key-space {

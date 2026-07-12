@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Globe, Settings, Clipboard, Delete } from 'lucide-react';
 
-const THEMES = ['light', 'dark', 'forest', 'traditional', 'glass'];
+const THEMES = ['light', 'dark', 'forest', 'traditional', 'glass', 'pink'];
 
 const MOCK_DICTIONARY = [
   'ngaran', 'aku', 'ikaw', 'tausug', 'bahasa', 'sulat', 'marayaw', 'adlaw'
@@ -10,7 +10,7 @@ const MOCK_DICTIONARY = [
 export default function App() {
   const [theme, setTheme] = useState('light');
   const [text, setText] = useState('');
-  const [keyboardMode, setKeyboardMode] = useState<'tausug' | 'normal'>('tausug');
+  const [keyboardMode, setKeyboardMode] = useState<'tausug' | 'normal' | 'sulat'>('tausug');
   const [isShift, setIsShift] = useState(false);
   const [predictions, setPredictions] = useState<string[]>(['ngaran', 'tausug', 'marayaw']);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -78,10 +78,17 @@ export default function App() {
   };
 
   const toggleKeyboard = () => {
-    setKeyboardMode(prev => prev === 'tausug' ? 'normal' : 'tausug');
+    setKeyboardMode(prev => {
+      if (prev === 'tausug') return 'normal';
+      if (prev === 'normal') return 'sulat';
+      return 'tausug';
+    });
   };
 
-  const Key = ({ label, display, special, action, space, enter }: any) => {
+  const Key = ({ label, display, special, action, space, enter, blank, halfBlank }: any) => {
+    if (blank) return <div className="key key-blank" />;
+    if (halfBlank) return <div className="key key-blank" style={{ flex: 0.5, maxWidth: '2.25rem' }} />;
+    
     const handleDown = (e: React.MouseEvent | React.TouchEvent) => {
       e.preventDefault();
       handleKeyPress(action || label);
@@ -109,6 +116,12 @@ export default function App() {
 
   return (
     <div className="app-container">
+      <div className="layout-status">
+        {keyboardMode === 'tausug' ? 'Layout: Pure Bahasa Sūg' : 
+         keyboardMode === 'normal' ? 'Layout: Normal (QWERTY)' : 
+         'Layout: Jawi (Sulat Sūg)'}
+      </div>
+
       <div className="controls">
         <button className="theme-btn" onClick={cycleTheme}>
           Theme: {theme.charAt(0).toUpperCase() + theme.slice(1)}
@@ -140,7 +153,21 @@ export default function App() {
             ))}
           </div>
 
-          {keyboardMode === 'tausug' ? (
+          {keyboardMode === 'sulat' ? (
+            <>
+              <div className="keyboard-row">
+                {['ر', 'ت', 'ة', 'و', 'ي', 'ء'].map(k => <Key key={k} label={k} />)}
+              </div>
+              <div className="keyboard-row">
+                {['ا', 'س', 'د', 'ف', 'گ', 'ه', 'ج', 'ک', 'ل'].map(k => <Key key={k} label={k} />)}
+              </div>
+              <div className="keyboard-row">
+                <Key label="⇧" action="SHIFT" special />
+                {['ب', 'ن', 'م'].map(k => <Key key={k} label={k} />)}
+                <Key display={<Delete size={20} />} action="⌫" special />
+              </div>
+            </>
+          ) : keyboardMode === 'tausug' ? (
             <>
               <div className="keyboard-row">
                 {['w', 'r', 't', 'y', 'u', 'i', 'p'].map(k => <Key key={k} label={k} />)}
@@ -174,9 +201,9 @@ export default function App() {
             <Key display="?123" action="NUM" special />
             <Key display={<Globe size={20} />} action="LANG" special />
             <Key display={<Clipboard size={20} />} action="CLIP" special />
-            <Key label={keyboardMode === 'tausug' ? "ūt" : "space"} action="SPACE" space />
+            <Key label={keyboardMode === 'tausug' ? "ūt" : keyboardMode === 'sulat' ? "رواڠ" : "space"} action="SPACE" space />
             <Key display={<Settings size={20} />} action="SET" special />
-            <Key label={keyboardMode === 'tausug' ? "balik" : "return"} action="ENTER" special enter />
+            <Key label={keyboardMode === 'tausug' ? "balik" : keyboardMode === 'sulat' ? "↵" : "return"} action="ENTER" special enter />
           </div>
         </div>
       </div>
