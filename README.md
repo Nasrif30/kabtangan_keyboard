@@ -22,19 +22,14 @@ Here is a look at the Kabtangan Keyboard interface and our cultural themes:
 
 <br>
 
-*(Insert Screenshot 1 Here)*
+<img width="1896" height="902" alt="image" src="https://github.com/user-attachments/assets/aa25dd0e-f9dd-414c-98ce-b5dfb5d5ec15" />
+
 
 <br>
 
-*(Insert Screenshot 2 Here)*
+<img width="1900" height="900" alt="image" src="https://github.com/user-attachments/assets/7fb2e683-30df-4ecf-ba84-8d1a26423f62" />
 
-<br>
 
-*(Insert Screenshot 3 Here)*
-
-<br>
-
-*(Insert Screenshot 4 Here)*
 
 <br>
 
@@ -47,6 +42,7 @@ Kabtangan is built to be unapologetically Tausug while retaining the premium, fl
 **Dual Layouts:**
 - **Pure Tausug:** Restricted to the exact 22 characters of the Bahasa Sūg alphabet, optimized for fast indigenous typing with dedicated `ng`, `ny`, and `'` keys.
 - **Normal (QWERTY):** A standard layout for typing borrowed words, names, and emails without feeling limited.
+- **Jawi:** Sulat Sūg.
 
 **Cultural Themes:**
 - **Light & Dark:** Clean, minimalist defaults.
