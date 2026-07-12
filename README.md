@@ -1,6 +1,6 @@
 # Kabtangan Keyboard
 
-> The premier keyboard for the Tausug language. Kabtangan is a fast, offline, privacy-first input method featuring smart Latin to Sulat Sūg transliteration, dedicated Bahasa Sūg alphabet layouts, and real-time word prediction. Designed to seamlessly preserve cultural heritage through a premium typing experience.
+> The premier keyboard for the Tausug language. Kabtangan is a fast, offline, privacy-first input method featuring smart Latin to Sulat Sūg transliteration, dedicated Bahasa Sūg alphabet layouts, jawi bahasa sug, and real-time word prediction. Designed to seamlessly preserve cultural heritage through a premium typing experience.
 
 **Bahasa Sūg · Sulat Sūg · Offline · Open Source**
 
@@ -10,7 +10,7 @@
 
 Welcome to the Kabtangan Keyboard project! This repository currently houses our **early UI prototype**. 
 
-We are at the very beginning of our journey. This initial build focuses purely on testing the premium design, smooth animations, and the dedicated Tausug dual-layout system. 
+We are at the very beginning of our journey. This initial build focuses purely on testing the premium design, smooth animations, and the dedicated Tausug Triplet-layout system. 
 
 *Note: The number pad and the full Rust-based offline typing engine are not yet wired into this specific UI preview, but the foundation is being laid.*
 
